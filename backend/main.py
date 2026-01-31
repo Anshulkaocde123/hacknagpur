@@ -15,16 +15,16 @@ async def health_check():
 async def verify_image(file: UploadFile = File(...)):
     # Read the file content
     contents = await file.read()
-
+    
     # Check if we can open it with PIL
     try:
         image = Image.open(io.BytesIO(contents))
         # Convert to numpy array to ensure libraries are working together
         img_np = np.array(image)
-
+        
         # Basic check with OpenCV (just getting dimensions)
         height, width = img_np.shape[:2]
-
+        
         return {
             "filename": file.filename,
             "content_type": file.content_type,

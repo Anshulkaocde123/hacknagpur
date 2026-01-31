@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "dev",
+			"type": "shell",
+			"command": "/home/anshul-jain/.bun/bin/bun",
+			"args": ["run", "dev"],
+			"isBackground": true,
+			"group": "build"
+		}
+	]
+}
